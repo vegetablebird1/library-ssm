@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!--    设置日志    -->
+    <settings>
+        <setting name="logImpl" value="STDOUT_LOGGING"/>
+    </settings>
+    <!--  设置别名   -->
+    <typeAliases>
+        <!--   实体类的别名     -->
+        <package name="com.library.pojo"/>
+    </typeAliases>
+
+    <!--sqlMapper（sql映射文件）位置-->
+    <mappers>
+        <!-- 包名，加载包中所有xml文件 -->
+        <package name="com.library.dao"/>
+    </mappers>
+</configuration>

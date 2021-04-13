@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.library.dao.BookMapper">
+    <insert id="addBook">
+        insert into books(bookName,bookCounts,detail) values (#{bookName},#{bookCounts},#{detail})
+    </insert>
+
+    <delete id="deleteBook">
+        delete from books where bookID=#{bookID}
+    </delete>
+
+    <update id="updateBook">
+        update books set bookName=#{bookName},bookCounts=#{bookCounts},detail=#{detail} where bookID=#{bookID}
+    </update>
+
+    <select id="queryBookById" resultType="com.library.pojo.Books">
+        select * from books where bookID=#{bookID}
+    </select>
+
+    <select id="queryAllBook" resultType="com.library.pojo.Books">
+        select * from books
+    </select>
+
+    <select id="queryBookByName" resultType="com.library.pojo.Books">
+        select * from books where bookName like "%"#{bookName}"%"
+    </select>
+</mapper>
